@@ -36,7 +36,7 @@ class InteractiveRecord
     self.class.table_name
   end
 
-  def values_for_insert
+  def values_for_insert #creates a string of values by calling the getter method of each value
     values = []
     self.class.column_names.each do |col_name|
       values << "'#{send(col_name)}'" unless send(col_name).nil?
